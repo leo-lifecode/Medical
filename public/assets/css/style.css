@@ -34,6 +34,14 @@ ul li a.nav-link {
     margin-left: 30px;
 }
 
+.active-link{
+    color: #BFD2F8 !important;
+}
+
+section{
+    min-height: 100vh;
+}
+
 @media only screen and (max-width: 767px) {
     .btn-nav {
         width: 50%;
