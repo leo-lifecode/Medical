@@ -1,0 +1,70 @@
+.contact-top-navbar {
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+ul li a.nav-link:hover {
+    text-decoration: underline;
+    transition: 500ms;
+}
+ul li a.nav-link {
+    text-decoration: none;
+}
+
+.title-hero {
+    font-size: 42px;
+}
+.description-title {
+    font-size: 18px;
+}
+#carousel-caption {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    right: 50%;
+    width: 100%;
+    text-align: start;
+}
+#btn-title {
+    padding: 10px 20px;
+    margin-top: 12px;
+}
+
+.none {
+    margin-left: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    .btn-nav {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .btn-nav {
+        width: 100%;
+    }
+    .contact-top-navbar {
+        font-size: 12px;
+        text-decoration: underline;
+    }
+    .title-hero {
+        font-size: 14px;
+    }
+    .description-title {
+        font-size: 8px;
+    }
+    .none {
+        margin: 0;
+    }
+    #carousel-caption {
+        text-align: center;
+    }
+    #btn-title {
+        padding: 5px 10px;
+        font-size: 8px;
+        margin: 0px;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+}
