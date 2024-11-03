@@ -24,8 +24,18 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#appointment">Appointment</a>
                 </li>
-                <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">Sign In</button>
-                <button type="button" class="btn-nav btn btn-dark border-0 rounded px-3 flex-shrink-0">Sign Up</button>
+                @auth
+                    <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
+                        <a href="" class="text-decoration-none text-white">Dashboard</a>
+                    </button>
+                @else
+                    <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
+                        <a href="" class="text-decoration-none text-white">Sign In</a>
+                    </button>
+                    <button type="button" class="btn-nav btn btn-dark border-0 rounded px-3 flex-shrink-0">
+                        <a href="" class="text-decoration-none text-white">Sign Up</a>
+                    </button>
+                @endauth
             </ul>
         </div>
 
