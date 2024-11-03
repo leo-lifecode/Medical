@@ -22,23 +22,26 @@
                     <a class="nav-link text-white" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#appointment">Appointment</a>
+                    <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle">Appointment</a>
                 </li>
+                
                 @auth
-                    <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
-                        <a href="" class="text-decoration-none text-white">Dashboard</a>
-                    </button>
+                <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
+                    <a href="" class="text-decoration-none text-white">Dashboard</a>
+                </button>
                 @else
-                    <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
-                        <a href="" class="text-decoration-none text-white">Sign In</a>
-                    </button>
-                    <button type="button" class="btn-nav btn btn-dark border-0 rounded px-3 flex-shrink-0">
-                        <a href="" class="text-decoration-none text-white">Sign Up</a>
-                    </button>
+                <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
+                    <a href="" class="text-decoration-none text-white">Sign In</a>
+                </button>
+                <button type="button" class="btn-nav btn btn-dark border-0 rounded px-3 flex-shrink-0">
+                    <a href="" class="text-decoration-none text-white">Sign Up</a>
+                </button>
                 @endauth
             </ul>
         </div>
 
     </div>
 
+
 </nav>
+
