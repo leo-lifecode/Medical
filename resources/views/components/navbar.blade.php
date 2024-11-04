@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md text-white w-100 d-flex align-items-center">
-    <div class="container-fluid">
+    <div class="container">
         <div class="pb-2">
             <h1 class="text-white m-0 fs-2">Medical</h1>
         </div>

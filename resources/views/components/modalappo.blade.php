@@ -20,7 +20,7 @@
                 <div class="col-md-6 d-flex">
                     <div class="modal-body d-flex align-items-center">
                         <div class="text w-100">
-                            <h3 class="mb-4">Create Your Appointment</h3>
+                            <h3 class="mb-1">Create Your Appointment</h3>
                             <form action="#" class="signup-form">
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">Full Name</label>
@@ -29,6 +29,10 @@
                                 <div class="form-group mb-3">
                                     <label class="label" for="email">Email Address</label>
                                     <input type="text" class="form-control" placeholder="johndoe@gmail.com">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label" for="phone">No Phone</label>
+                                    <input type="text" class="form-control" placeholder="123-456-7890">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="Doctors">Choose a Doctor:</label>

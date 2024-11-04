@@ -20,3 +20,18 @@ const scrollActive = () => {
   });
 };
 window.addEventListener("scroll", scrollActive);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('#navList .nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Hapus background warna dari semua item
+      navLinks.forEach(l => l.firstElementChild.style.backgroundColor = '');
+
+      // Tambahkan warna background ke item yang diklik
+      this.firstElementChild.style.backgroundColor = '#1F2B6C';
+    });
+  });
+});
