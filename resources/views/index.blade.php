@@ -19,7 +19,7 @@
             <p class="description-title m-0">Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
               Interdum vivamus augue <br /> cursus eget sagittis etiam.</p>
             <button id="btn-title" class="border-0 rounded bg-primary text-white">
-              <a href="#Appoiment" class="text-white text-decoration-none">
+              <a data-bs-toggle="modal" href="#exampleModalToggle" class="text-white text-decoration-none">
                 Appoiment Now
               </a>
             </button>
@@ -36,7 +36,7 @@
             <h2 class="title-hero">
               Best Care for Your <br />Good Health </h2>
             <button id="btn-title" class="border-0 rounded bg-primary text-white">
-              <a href="#Service" class="text-white text-decoration-none">
+              <a href="/Services" class="text-white text-decoration-none">
                 Our Service
               </a>
             </button>
@@ -54,8 +54,8 @@
               Leading the Way <br />
               in Medical Excellence</h2>
             <button id="btn-title" class="border-0 rounded bg-primary">
-              <a href="#Department" class="text-white text-decoration-none">
-                Our Department
+              <a href="/Doctors" class="text-white text-decoration-none">
+                Our Doctor
               </a>
             </button>
           </div>
@@ -126,8 +126,9 @@
           </li>
           <li class="nav-item" role="presentation">
             <a id="navServicesColor" class="nav-link active show" style="border-color: white" data-bs-toggle="tab"
-              href="#services-tab-2" aria-selected="false" role="tab" tabindex="-1" >
-              <div class="py-3 border rounded d-flex flex-column align-items-center" style="background-color: #1F2B6C; color: #fff">
+              href="#services-tab-2" aria-selected="false" role="tab" tabindex="-1">
+              <div class="py-3 border rounded d-flex flex-column align-items-center"
+                style="background-color: #1F2B6C; color: #fff">
                 <img src={{ asset('assets/img/svg/heart.svg') }} width="35">
                 <span class="text-decoration-none">Cardiogram</span>
               </div>
