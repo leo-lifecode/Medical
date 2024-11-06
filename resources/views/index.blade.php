@@ -115,27 +115,27 @@
     <div class="row">
       <div class="col-lg-2">
         <ul class="nav nav-tabs flex-column" role="tablist">
-          <li class="nav-item" role="presentation" >
-            <a class="nav-link" style="border-color: white" data-bs-toggle="tab" href="#services-tab-1"
-              aria-selected="false" role="tab" tabindex="-1">
-              <div class="py-3 border rounded d-flex flex-column align-items-center" style="background-color: #1F2B6C; color: #EEEEEE">
+          <li class="nav-item" role="presentation">
+            <a id="navServicesColor" class="nav-link" style="border-color: white" data-bs-toggle="tab"
+              href="#services-tab-1" aria-selected="false" role="tab" tabindex="-1">
+              <div id="navItemColorActive" class="py-3 border rounded d-flex flex-column align-items-center">
                 <img src={{ asset('assets/img/svg/cardiogram.svg') }} width="35">
                 <span class="text-decoration-none">Free Checkup</span>
               </div>
             </a>
           </li>
           <li class="nav-item" role="presentation">
-            <a class="nav-link active show" style="border-color: white" data-bs-toggle="tab" href="#services-tab-2"
-              aria-selected="false" role="tab" tabindex="-1">
-              <div class="py-3 border rounded d-flex flex-column align-items-center">
+            <a id="navServicesColor" class="nav-link active show" style="border-color: white" data-bs-toggle="tab"
+              href="#services-tab-2" aria-selected="false" role="tab" tabindex="-1" >
+              <div class="py-3 border rounded d-flex flex-column align-items-center" style="background-color: #1F2B6C; color: #fff">
                 <img src={{ asset('assets/img/svg/heart.svg') }} width="35">
                 <span class="text-decoration-none">Cardiogram</span>
               </div>
             </a>
           </li>
           <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" style="border-color: white" href="#services-tab-3"
-              aria-selected="false" role="tab" tabindex="-1">
+            <a id="navServicesColor" class="nav-link" data-bs-toggle="tab" style="border-color: white"
+              href="#services-tab-3" aria-selected="false" role="tab" tabindex="-1">
               <div class="py-3 border rounded d-flex flex-column align-items-center">
                 <img src={{ asset('assets/img/svg/dnatest.svg') }} width="35">
                 <span class="text-decoration-none">Dna Testing</span>
@@ -143,8 +143,8 @@
             </a>
           </li>
           <li class="nav-item" role="presentation">
-            <a class="nav-link" data-bs-toggle="tab" style="border-color: white" href="#services-tab-4"
-              aria-selected="false" role="tab" tabindex="-1">
+            <a id="navServicesColor" class="nav-link" data-bs-toggle="tab" style="border-color: white"
+              href="#services-tab-4" aria-selected="false" role="tab" tabindex="-1">
               <div class="py-3 border rounded d-flex flex-column align-items-center">
                 <img src={{ asset('assets/img/svg/blookbank.svg') }} width="35">
                 <span class="text-decoration-none">Blook Bank</span>
@@ -169,28 +169,36 @@
                 <div class="row">
                   <div class="col-6">
                     <ul class="list-unstyled d-flex flex-column gap-3" style="font-weight: 600">
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Comprehensive Health Assessment</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Personalized Medical Advice</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Early Detection Focus</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Comprehensive Health
+                          Assessment</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Personalized Medical
+                          Advice</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Early Detection
+                          Focus</span></li>
                     </ul>
                   </div>
                   <div class="col-6">
                     <ul class="list-unstyled d-flex flex-column gap-3" style="font-weight: 600">
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Experienced Medical Staff</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>No Cost, Full Support</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Community Health Initiative</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Experienced Medical
+                          Staff</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>No Cost, Full
+                          Support</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Community Health
+                          Initiative</span></li>
                     </ul>
                   </div>
                 </div>
-                <p class="mt-3">Experience comprehensive health assessments at no cost. Our free checkup program is designed to help you stay proactive about your health and well-being.</p>
-                <p>Join our initiative and take advantage of this opportunity to ensure your health is on the right track. We are here to support you every step of the way.</p>
+                <p class="mt-3">Experience comprehensive health assessments at no cost. Our free checkup program is
+                  designed to help you stay proactive about your health and well-being.</p>
+                <p>Join our initiative and take advantage of this opportunity to ensure your health is on the right
+                  track. We are here to support you every step of the way.</p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="{{ asset('assets/img/departments-1.jpg') }}" alt="Free Checkup" class="img-fluid">
               </div>
             </div>
           </div>
-          
+
           <div class="tab-pane active show" id="services-tab-2" role="tabpanel">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
@@ -213,11 +221,12 @@
                     </ul>
                   </div>
                 </div>
-                  <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare
-                    ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit
-                    nascetur proin massa in. Consequat faucibus porttitor enim et.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque. Convallis
-                    felis vitae tortor augue. Velit nascetur proin massa in.</p>
+                <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque
+                  tortor ornare
+                  ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit
+                  nascetur proin massa in. Consequat faucibus porttitor enim et.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque. Convallis
+                  felis vitae tortor augue. Velit nascetur proin massa in.</p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src={{ asset('assets/img/cardioimg.png') }} class="img-fluid">
@@ -232,28 +241,37 @@
                 <div class="row">
                   <div class="col-6">
                     <ul class="list-unstyled d-flex flex-column gap-3" style="font-weight: 600">
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Comprehensive Genetic Analysis</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Accurate and Reliable Results</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>State-of-the-Art Technology</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Comprehensive Genetic
+                          Analysis</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Accurate and Reliable
+                          Results</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>State-of-the-Art
+                          Technology</span></li>
                     </ul>
                   </div>
                   <div class="col-6">
                     <ul class="list-unstyled d-flex flex-column gap-3" style="font-weight: 600">
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Confidential and Secure</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Expert Genetic Counselors</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Personalized Reports</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Confidential and
+                          Secure</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Expert Genetic
+                          Counselors</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Personalized
+                          Reports</span></li>
                     </ul>
                   </div>
                 </div>
-                <p class="mt-3">Unlock insights into your genetic profile with our cutting-edge DNA testing services. Understand more about your heritage, health predispositions, and unique genetic traits.</p>
-                <p>Our DNA testing process is designed to be quick, precise, and entirely secure, ensuring your results are accurate and confidential. We employ advanced technology and a team of experts to provide you with comprehensive, personalized genetic analysis and professional guidance.</p>
+                <p class="mt-3">Unlock insights into your genetic profile with our cutting-edge DNA testing services.
+                  Understand more about your heritage, health predispositions, and unique genetic traits.</p>
+                <p>Our DNA testing process is designed to be quick, precise, and entirely secure, ensuring your results
+                  are accurate and confidential. We employ advanced technology and a team of experts to provide you with
+                  comprehensive, personalized genetic analysis and professional guidance.</p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="{{ asset('assets/img/departments-3.jpg') }}" alt="DNA Testing" class="img-fluid">
               </div>
             </div>
           </div>
-          
+
           <div class="tab-pane" id="services-tab-4" role="tabpanel">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
@@ -261,28 +279,38 @@
                 <div class="row">
                   <div class="col-6">
                     <ul class="list-unstyled d-flex flex-column gap-3" style="font-weight: 600">
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>24/7 Availability</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Safe and Secure Storage</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Rigorous Screening Process</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>24/7 Availability</span>
+                      </li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Safe and Secure
+                          Storage</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Rigorous Screening
+                          Process</span></li>
                     </ul>
                   </div>
                   <div class="col-6">
                     <ul class="list-unstyled d-flex flex-column gap-3" style="font-weight: 600">
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Emergency Blood Donation</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Multiple Blood Types Available</span></li>
-                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Expert Medical Team</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Emergency Blood
+                          Donation</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Multiple Blood Types
+                          Available</span></li>
+                      <li><img src="{{ asset('assets/img/svg/point.svg') }}" class="me-2"><span>Expert Medical
+                          Team</span></li>
                     </ul>
                   </div>
                 </div>
-                <p class="mt-3">Ensuring reliable and safe blood services for patients in need, anytime and anywhere.</p>
-                <p>Our blood bank is equipped with state-of-the-art facilities and adheres to the highest standards of safety and quality. We offer a comprehensive range of blood-related services, including secure storage, rigorous testing, and fast processing to meet urgent needs. Our expert team is committed to supporting patients with timely and lifesaving blood transfusions.</p>
+                <p class="mt-3">Ensuring reliable and safe blood services for patients in need, anytime and anywhere.
+                </p>
+                <p>Our blood bank is equipped with state-of-the-art facilities and adheres to the highest standards of
+                  safety and quality. We offer a comprehensive range of blood-related services, including secure
+                  storage, rigorous testing, and fast processing to meet urgent needs. Our expert team is committed to
+                  supporting patients with timely and lifesaving blood transfusions.</p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="{{ asset('assets/img/departments-2.jpg') }}" alt="Blood Bank" class="img-fluid">
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
