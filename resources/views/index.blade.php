@@ -11,10 +11,10 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src={{ asset('assets/img/hero-bg.png') }} class="d-block w-100">
+      <img src={{ asset('assets/img/hero-bg.png') }} class="d-block w-100" data-aos="fade-in" data-aos-once="true">
       <div id="carousel-caption" class="carousel-caption h-100 align-items-center d-flex">
         <div class="container">
-          <div class="none col-md-6" style="color: #1F2B6C">
+          <div class="none col-md-6" style="color: #1F2B6C" data-aos="fade-down" data-aos-delay="200" data-aos-once="true">
             <h2 class="title-hero"> Welcome to <br /> Medical Hospital</h2>
             <p class="description-title m-0">Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
               Interdum vivamus augue <br /> cursus eget sagittis etiam.</p>
@@ -77,12 +77,12 @@
 <section id="aboutus" class="d-flex align-items-center" style="background-color: #EEEEEE">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 m-auto order-2 order-lg-1">
+      <div class="col-lg-6 m-auto order-2 order-lg-1" data-aos="fade-right" data-aos-delay="200" data-aos-once="true">
         <h3 class="fw-medium my-3" style="color: #1F2B6C">
           WELCOME TO <br />
           <span class="text-black">MEDICAL HOSPITAL</span>
         </h3>
-        <p>
+        <p >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus, mauris sagittis et sem. Magna cursus orci
           id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus, mauris sagittis et sem. Magna cursus
           orci id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus, mauris sagittis et sem.
@@ -94,7 +94,7 @@
           adipiscing elit.
         </p>
       </div>
-      <div class="col-lg-6 order-1 order-lg-2">
+      <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100" data-aos-once="true">
         <img src={{asset("assets/img/about.png")}} class="img-fluid rounded-circle">
       </div>
     </div>
@@ -106,13 +106,13 @@
 {{-- services --}}
 <section id="services" class="">
 
-  <div class="container text-center mb-5">
+  <div class="container text-center mb-5" data-aos="fade-up" data-aos-once="true">
     <h2 style="color: #1F2B6C">Our Services</h2>
   </div>
 
   <div class="container">
 
-    <div class="row">
+    <div class="row" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
       <div class="col-lg-2">
         <ul class="nav nav-tabs flex-column" role="tablist">
           <li class="nav-item" role="presentation">
@@ -324,16 +324,16 @@
 {{-- doctors --}}
 <section id="doctors" class="">
 
-  <div class="container text-center">
+  <div class="container text-center" data-aos="fade-up" data-aos-once="true">
     <h2 style="color: #1F2B6C">Doctors</h2>
     <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
   </div>
 
   <div class="container">
 
-    <div class="row gy-4">
+    <div class="row gy-4" data-aos="fade-up" data-aos-once="true">
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-up" data-aos="100" data-aos-once="true">
         <div class=" d-flex align-items-start">
           <div><img src="assets/img/doctors/doctors-1.jpg" width="250" class="img-fluid rounded-circle"></div>
           <div class="m-auto ps-2">
@@ -344,7 +344,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
         <div class=" d-flex align-items-start">
           <div><img src="assets/img/doctors/doctors-2.jpg" width="250" class="img-fluid rounded-circle" alt=""></div>
           <div class="m-auto ps-2">
@@ -355,7 +355,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
         <div class=" d-flex align-items-start">
           <div><img src="assets/img/doctors/doctors-3.jpg" width="250" class="img-fluid rounded-circle" alt=""></div>
           <div class="m-auto ps-2">
@@ -366,7 +366,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
         <div class="d-flex align-items-start">
           <div><img src="assets/img/doctors/doctors-4.jpg" width="250" class="img-fluid rounded-circle" alt=""></div>
           <div class="m-auto ps-2">
@@ -391,7 +391,7 @@
 <section id="contact" class="">
 
   <!-- Section Title -->
-  <div class="container text-center">
+  <div class="container text-center" data-aos="fade-up" data-aos-once="true">
     <h2 style="color: #1F2B6C">Contact</h2>
     <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
   </div>
@@ -407,28 +407,28 @@
     <div class="row">
 
       <div class="col-lg-4">
-        <div class="info-item d-flex ">
+        <div class="info-item d-flex " data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
           <div>
             <h3 class="text-primary">Location</h3>
             <p>A108 Adam Street, New York, NY 535022</p>
           </div>
         </div>
 
-        <div class="info-item d-flex ">
+        <div class="info-item d-flex " data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
           <div>
             <h3 class="text-primary">Call Us</h3>
             <p>+(237) 681-812-255</p>
           </div>
         </div>
 
-        <div class="info-item d-flex " data-aos="fade-up" data-aos-delay="500">
+        <div class="info-item d-flex " data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
           <div>
             <h3 class="text-primary">Email Us</h3>
             <p>example@gmail.com</p>
           </div>
         </div>
 
-        <div class="info-item d-flex " data-aos="fade-up" data-aos-delay="500">
+        <div class="info-item d-flex " data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
           <div>
             <h3 class="text-primary">Working Hours</h3>
             <p class="mb-0">Mon-Sat 09:00-20:00</p>
