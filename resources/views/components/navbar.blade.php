@@ -24,17 +24,24 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle">Appointment</a>
                 </li>
-                
+
                 @auth
                 <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
-                    <a href="" class="text-decoration-none text-white">Dashboard</a>
+                    <a href="/dashboard" class="text-decoration-none text-white">Dashboard</a>
                 </button>
+
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
+                        Logout
+                    </button>
+                </form>
                 @else
                 <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
-                    <a href="" class="text-decoration-none text-white">Sign In</a>
+                    <a href="/login" class="text-decoration-none text-white">Sign In</a>
                 </button>
                 <button type="button" class="btn-nav btn btn-dark border-0 rounded px-3 flex-shrink-0">
-                    <a href="" class="text-decoration-none text-white">Sign Up</a>
+                    <a href="/register" class="text-decoration-none text-white">Sign Up</a>
                 </button>
                 @endauth
             </ul>
@@ -44,4 +51,3 @@
 
 
 </nav>
-
