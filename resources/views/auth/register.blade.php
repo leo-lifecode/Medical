@@ -19,19 +19,28 @@
                     @csrf
                     <h2>Signup</h2>
                     <div class="input_box">
-                        <input name="email" type="email" placeholder="Enter your email" required />
+                        <input name="email" type="email" placeholder="Enter your email" required value="{{ old('email') }}" />
                         <i class="uil uil-envelope-alt email"></i>
+                        @error('email')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="input_box">
-                        <input name="name" type="text" placeholder="Enter your name" required />
+                        <input name="name" type="text" placeholder="Enter your name" required value="{{ old('name') }}" />
                         <i class="uil uil-user user"></i>
+                        @error('name')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="input_box">
                         <input name="password" type="password" placeholder="Create password" required />
                         <i class="uil uil-lock password"></i>
+                        @error('password')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="button">Signup Now</button>
-                    <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+                    <div class="login_signup">Already have an account? <a href="/login">Login</a></div>
                 </form>
             </div>
         </div>

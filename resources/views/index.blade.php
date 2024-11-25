@@ -1,5 +1,4 @@
 @extends('layout.homelayout')
-
 @section('content')
 {{-- carousel --}}
 <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -14,7 +13,8 @@
       <img src={{ asset('assets/img/hero-bg.png') }} class="d-block w-100" data-aos="fade-in" data-aos-once="true">
       <div id="carousel-caption" class="carousel-caption h-100 align-items-center d-flex">
         <div class="container">
-          <div class="none col-md-6" style="color: #1F2B6C" data-aos="fade-down" data-aos-delay="200" data-aos-once="true">
+          <div class="none col-md-6" style="color: #1F2B6C" data-aos="fade-down" data-aos-delay="200"
+            data-aos-once="true">
             <h2 class="title-hero"> Welcome to <br /> Medical Hospital</h2>
             <p class="description-title m-0">Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
               Interdum vivamus augue <br /> cursus eget sagittis etiam.</p>
@@ -82,7 +82,7 @@
           WELCOME TO <br />
           <span class="text-black">MEDICAL HOSPITAL</span>
         </h3>
-        <p >
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus, mauris sagittis et sem. Magna cursus orci
           id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus, mauris sagittis et sem. Magna cursus
           orci id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus, mauris sagittis et sem.
@@ -475,6 +475,6 @@
 
 </section>
 
-
+<x-modalappo :doctors="$doctors"></x-modalappo>
 
 @endsection

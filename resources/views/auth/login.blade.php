@@ -17,6 +17,9 @@
                 <form action="/signin" method="POST">
                     @csrf
                     <h2>Login</h2>
+                    @session('loginError')
+                        <div class="error" style="text-align: center">{{ session('loginError') }}</div>
+                    @endsession
                     <div class="input_box">
                         <input name="email" type="email" placeholder="Enter your email" required />
                         <i class="uil uil-envelope-alt email"></i>
@@ -26,7 +29,7 @@
                         <i class="uil uil-lock password"></i>
                     </div>
                     <button type="submit" class="button">Login Now</button>
-                    <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+                    <div class="login_signup">Don't have an account? <a href="/register">Signup</a></div>
                 </form>
             </div>
         </div>

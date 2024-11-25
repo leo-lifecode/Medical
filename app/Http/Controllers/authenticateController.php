@@ -23,9 +23,9 @@ class authenticateController extends Controller
                 }
                 return redirect('/');
             }
-
-            redirect('/');
         }
+        
+        return back()->with('loginError', 'Email or Password is Wrong!');
     }
 
     public function register(Request $request)

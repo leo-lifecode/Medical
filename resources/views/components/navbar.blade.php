@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md text-white w-100 d-flex align-items-center">
     <div class="container">
         <div class="pb-2">
-            <h1 class="text-white m-0 fs-2">Medical</h1>
+            <h1 class="text-white m-0 fs-2"><a href="/" class="text-decoration-none text-white">Medical</a></h1>
         </div>
         <button class="navbar-toggler pb-2" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
             aria-expanded="false">
@@ -37,12 +37,9 @@
                     </button>
                 </form>
                 @else
-                <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
-                    <a href="/login" class="text-decoration-none text-white">Sign In</a>
-                </button>
-                <button type="button" class="btn-nav btn btn-dark border-0 rounded px-3 flex-shrink-0">
-                    <a href="/register" class="text-decoration-none text-white">Sign Up</a>
-                </button>
+                    <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
+                        <a href="/login" class="text-decoration-none text-white">Login / Sign Up</a>
+                    </button>
                 @endauth
             </ul>
         </div>
