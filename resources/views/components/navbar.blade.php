@@ -37,9 +37,9 @@
                     </button>
                 </form>
                 @else
-                    <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
-                        <a href="/login" class="text-decoration-none text-white">Login / Sign Up</a>
-                    </button>
+                <button type="button" class="btn-nav btn btn-primary px-3 rounded flex-shrink-0">
+                    <a href="/login" class="text-decoration-none text-white">Login / Sign Up</a>
+                </button>
                 @endauth
             </ul>
         </div>

@@ -4164,6 +4164,14 @@ span.select2-container.select2-container--default.select2-container--open {
   display: block;
   padding: 8px 8px 8px 40px;
 }
+.sidebar .sidebar-menu > ul > li.submenu.active ul li a {
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  display: block;
+  padding: 8px 8px 8px 40px;
+}
 .sidebar .sidebar-menu > ul > li.submenu ul li a.active {
   color: #092c4c;
 }
