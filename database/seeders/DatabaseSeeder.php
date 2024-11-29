@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Doctor;
+use App\Models\Speciality;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -37,5 +39,29 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+        Speciality::insert([
+            [
+                'name' => 'Cardiology'
+            ],
+            [
+                'name' => 'Pediatrics'
+            ],
+            [
+                'name' => 'Dentistry'
+            ]
+        ]);
+
+        Doctor::insert([
+            [
+                'name' => 'Dr. John Doe',
+                'speciality_id' => 1,
+                'email' => 'johndoe@gmail.com',
+                'phone' => '123-456-7890',
+                'password' => Hash::make('12345678'),
+                'bio' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                'location' => '123 Main Street, Anytown, USA',
+                'schedule' => 'Monday to Friday: 9:00 AM - 5:00 PM'
+            ]
+        ]);
     }
 }

@@ -1,6 +1,7 @@
 @extends('dashboard.layout.layoutdashboard')
 
 @section('content')
+
 <div class="content">
     <div class="page-header">
         <div class="page-title">
@@ -28,9 +29,17 @@
                             <label>Schedule</label>
                             <select name="schedule" class="form-control select">
                                 <option value="" selected disabled>Choose Schedule</option>
-                                <option value="Morning" {{ old('schedule')=='Morning' ? 'selected' : '' }}>Morning
+                                <option value="Monday to Friday: 9:00 AM - 5:00 PM" {{
+                                    old('schedule')=='Monday to Friday: 9:00 AM - 5:00 PM' ? 'selected' : '' }}>Monday
+                                    to Friday: 9:00 AM - 5:00 PM
                                 </option>
-                                <option value="Evening" {{ old('schedule')=='Evening' ? 'selected' : '' }}>Evening
+                                <option value="Monday to Friday: 12:00 AM - 3:00 PM" {{
+                                    old('schedule')=='Monday to Friday: 12:00 AM - 3:00 PM' ? 'selected' : '' }}>Monday
+                                    to Friday: 12:00 AM - 3:00 PM
+                                </option>
+                                <option value="Monday: 10:00 AM - 5:00 PM" {{
+                                    old('schedule')=='Monday: 10:00 AM - 5:00 PM' ? 'selected' : '' }}>Monday: 10:00 AM
+                                    - 5:00 PM
                                 </option>
                             </select>
                             @error('schedule')
@@ -41,12 +50,14 @@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Speciality</label>
-                            <select name="speciality" class="form-control select">
+                            <select name="speciality_id" class="form-control select">
                                 <option value="" selected disabled>Choose Speciality</option>
-                                <option value="Cardiology" {{ old('speciality')=='Cardiology' ? 'selected' : '' }}>
-                                    Cardiology</option>
-                                <option value="Neurology" {{ old('speciality')=='Neurology' ? 'selected' : '' }}>
-                                    Neurology</option>
+                                @foreach ($specialities as $speciality)
+                                <option value="{{ $speciality->id }}" {{ old('speciality_id')=="$speciality->id"
+                                    ? 'selected' : '' }}>
+                                    {{$speciality->name}}
+                                </option>
+                                @endforeach
                             </select>
                             @error('speciality')
                             <div class="text-danger">{{ $message }}</div>
@@ -73,6 +84,15 @@
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" value="{{ old('password') }}" class="form-control" />
+                            @error('password')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="form-group">
                             <label>Phone</label>
                             <input type="text" name="phone" value="{{ old('phone') }}" class="form-control" />
                             @error('phone')
@@ -91,14 +111,10 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label>Doctor Image</label>
-                            <div class="image-upload">
-                                <input type="file" name="image" class="form-control" />
-                                <div class="image-uploads">
-                                    <img src="{{ asset('assets/img/icons/upload.svg') }}" />
-                                    <h4>Drag and drop a file to upload</h4>
-                                </div>
-                            </div>
+                            <label for="formFile" class="form-label">
+                                Choose profile photo
+                            </label>
+                            <input id="file-input" name="image" type="file" class="form-control" />
                             @error('image')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -113,4 +129,10 @@
         </form>
     </div>
 </div>
+
+
+<script>
+
+
+</script>
 @endsection

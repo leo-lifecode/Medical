@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -11,12 +12,16 @@ class authenticateController extends Controller
 {
     public function Login(Request $request)
     {
+        $doctors = Doctor::all();
         $validateData = $request->validate([
             'email' => 'required|email:dns',
             'password' => 'min:8|required',
         ]);
 
+
+
         if (Auth::attempt($validateData)) {
+
             $request->session()->regenerate();
             if (Auth::user()->role == 'admin') { {
                     return redirect()->intended('dashboard');
@@ -24,7 +29,7 @@ class authenticateController extends Controller
                 return redirect('/');
             }
         }
-        
+
         return back()->with('loginError', 'Email or Password is Wrong!');
     }
 

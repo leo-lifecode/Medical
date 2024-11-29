@@ -183,48 +183,78 @@
                             </a>
                         </li>
                         <li class="submenu">
-                            <a href="/dashboard/appointment" class="{{ request()->is('dashboard/appointment*') ? 'active' : '' }}" ><img src={{ asset('assets/img/icons/appointment.svg') }} />
+                            <a href="/dashboard/appointment"
+                                class="{{ request()->is('dashboard/appointment*') ? 'active' : '' }}"><img src={{
+                                    asset('assets/img/icons/appointment.svg') }} />
                                 <span>Appointment</span>
                                 <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="/dashboard/appointment" class="{{ request()->is('dashboard/appointment') ? 'active' : '' }}">Appointment List</a></li>
-                                <li><a href="/dashboard/appointment/create" class="{{ request()->is('dashboard/appointment/create') ? 'active' : '' }}">Add Appointment</a></li>
+                                <li><a href="/dashboard/appointment"
+                                        class="{{ request()->is('dashboard/appointment') ? 'active' : '' }}">Appointment
+                                        List</a></li>
+                                <li><a href="/dashboard/appointment/create"
+                                        class="{{ request()->is('dashboard/appointment/create') ? 'active' : '' }}">Add
+                                        Appointment</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
-                            <a href="/dashboard/doctor" class="{{ request()->is('dashboard/doctor*') ? 'active' : '' }}"><img src={{ asset('assets/img/icons/doctor.svg') }} />
+                            <a href="/dashboard/doctor"
+                                class="{{ request()->is('dashboard/doctor*') ? 'active' : '' }}"><img src={{
+                                    asset('assets/img/icons/doctor.svg') }} />
                                 <span>Doctor</span>
                                 <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="/dashboard/doctor" class="{{ request()->is('dashboard/doctor') ? 'active' : '' }}">Doctor List</a></li>
-                                <li><a href="/dashboard/doctor/create" class="{{ request()->is('dashboard/doctor/create') ? 'active' : '' }}">Add Doctor</a></li>
+                                <li><a href="/dashboard/doctor"
+                                        class="{{ request()->is('dashboard/doctor') ? 'active' : '' }}">Doctor List</a>
+                                </li>
+                                <li><a href="/dashboard/doctor/create"
+                                        class="{{ request()->is('dashboard/doctor/create') ? 'active' : '' }}">Add
+                                        Doctor</a></li>
                             </ul>
                         </li>
                         <li class="submenu ">
-                            <a href="/dashboard/patient" class="{{ request()->is('dashboard/patient*') ? 'active' : '' }}"><img src={{ asset('assets/img/icons/patient.svg') }} />
+                            <a href="/dashboard/patient"
+                                class="{{ request()->is('dashboard/patient*') ? 'active' : '' }}"><img src={{
+                                    asset('assets/img/icons/patient.svg') }} />
                                 <span>Patient</span>
                                 <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="/dashboard/patient" class="{{ request()->is('dashboard/patient') ? 'active' : '' }}">Patient List</a></li>
-                                <li><a href="/dashboard/patient/create" class="{{ request()->is('dashboard/patient/create') ? 'active' : '' }}">Add Patient</a></li>
+                                <li><a href="/dashboard/patient"
+                                        class="{{ request()->is('dashboard/patient') ? 'active' : '' }}">Patient
+                                        List</a></li>
+                                <li><a href="/dashboard/patient/create"
+                                        class="{{ request()->is('dashboard/patient/create') ? 'active' : '' }}">Add
+                                        Patient</a></li>
                             </ul>
                         </li>
                         <li class="submenu ">
-                            <a href="/dashboard/user" class="{{ request()->is('dashboard/user*') ? 'active' : '' }}"><img src={{ asset('assets/img/icons/user.svg') }} />
-                                <span>User</span>
+                            <a href="/dashboard/user"
+                                class="{{ request()->is('dashboard/user*') ? 'active' : '' }}"><img src={{
+                                    asset('assets/img/icons/user.svg') }} />
+                                <span>Employee</span>
                                 <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="/dashboard/user" class="{{ request()->is('dashboard/user') ? 'active' : '' }}">User List</a></li>
-                                <li><a href="/dashboard/user/create" class="{{ request()->is('dashboard/user/create') ? 'active' : '' }}">Add User</a></li>
+                                <li><a href="/dashboard/user"
+                                        class="{{ request()->is('dashboard/user') ? 'active' : '' }}">Employee List</a>
+                                </li>
+                                <li><a href="/dashboard/user/create"
+                                        class="{{ request()->is('dashboard/user/create') ? 'active' : '' }}">Add
+                                        Employee</a></li>
                             </ul>
                         </li>
                         <li class="submenu ">
-                            <a href="/dashboard/service" class="{{ request()->is('dashboard/service*') ? 'active' : '' }}"><img src={{ asset('assets/img/icons/service.svg') }} />
-                                <span>Services</span>
+                            <a href="/dashboard/speciality"
+                                class="{{ request()->is('dashboard/specility*') ? 'active' : '' }}"><img src={{
+                                    asset('assets/img/icons/service.svg') }} />
+                                <span>Department</span>
                                 <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="/dashboard/service" class="{{ request()->is('dashboard/service') ? 'active' : '' }}">Service List</a></li>
-                                <li><a href="/dashboard/service/create" class="{{ request()->is('dashboard/service/create') ? 'active' : '' }}">Add Service</a></li>
+                                <li><a href="/dashboard/speciality"
+                                        class="{{ request()->is('dashboard/speciality') ? 'active' : '' }}">Department
+                                        List</a></li>
+                                <li><a href="/dashboard/speciality/create"
+                                        class="{{ request()->is('dashboard/speciality/create') ? 'active' : '' }}">Add
+                                        Department</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -232,13 +262,13 @@
             </div>
         </div>
 
+        <script src={{ asset('assets/js/jquery-3.6.0.min.js') }}></script>
         <div class="page-wrapper">
             @yield('content')
         </div>
 
     </div>
 
-    <script src={{ asset('assets/js/jquery-3.6.0.min.js') }}></script>
     <script src={{ asset('assets/js/feather.min.js') }}></script>
     <script src={{ asset('assets/js/jquery.slimscroll.min.js') }}></script>
     <script src={{ asset('assets/js/jquery.dataTables.min.js') }}></script>
@@ -246,6 +276,7 @@
     <script src={{ asset('assets/js/dataTables.bootstrap4.min.js') }}></script>
     <script src={{ asset('assets/js/bootstrap.bundle.min.js') }}></script>
     <script src={{ asset('assets/js/scriptdashboard.js') }}></script>
+    <script src={{ asset('assets/js/jfileinput.js') }}></script>
 
 </body>
 

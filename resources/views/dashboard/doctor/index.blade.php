@@ -46,6 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($doctors as $doctor)
                         <tr>
                             <td>
                                 <label class="checkboxs">
@@ -55,25 +56,25 @@
                             </td>
                             <td class="productimgname">
                                 <a href="javascript:void(0);" class="product-img">
-                                    <img src={{ asset('assets/img/doctors/doctors-1.jpg') }} />
+                                    <img src={{ asset('storage/'.$doctor->image) }} />
                                 </a>
                             </td>
-                            <td>Macbook pro</td>
-                            <td>Computers</td>
-                            <td>N/D</td>
-                            <td>1500.00</td>
-                            <td>pc</td>
-                            <td>100.00</td>
-                            <td>Admin</td>
+                            <td>{{$doctor->name}}</td>
+                            <td>{{$doctor->email}}</td>
+                            <td>{{$doctor->phone}}</td>
+                            <td>{{$doctor->speciality->name}}</td>
+                            <td>{{$doctor->bio}}</td>
+                            <td>{{$doctor->location}}</td>
+                            <td>{{$doctor->schedule}}</td>
                             <td class="">
-                                <a class="me-3" href="/dashboard/doctor/$doctor->id">
+                                <a class="me-3" href="/dashboard/doctor/{{$doctor->id}}">
                                     <img src={{ asset('assets/img/icons/eye.svg') }} />
                                 </a>
-                                <a class="me-3" href="/dashboard/doctor/$doctor->id/edit">
+                                <a class="me-3" href="/dashboard/doctor/{{$doctor->id}}/edit">
                                     <img src={{ asset('assets/img/icons/edit.svg') }} />
                                 </a>
                                 <a class="confirm-text" href="javascript:void(0);">
-                                    <form action="/dashboard/doctor/$doctor->id" method="POST" class="d-inline">
+                                    <form action="/dashboard/doctor/{{$doctor->id}}" method="POST" class="d-inline">
                                         @method('destroy')
                                         @csrf
                                         <button type="submit" class="btn p-0 mb-2">
@@ -83,6 +84,7 @@
                                 </a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
