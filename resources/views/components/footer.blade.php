@@ -11,10 +11,10 @@
                     <div class="col-md-3 mb-md-0 mb-4">
                         <h2>Hospital</h2>
                         <ul class="list-unstyled">
-                            <li><a class="text-white text-decoration-none" href="#" class="d-block">Appointment</a></li>
-                            <li><a class="text-white text-decoration-none">Doctors</a></li>
-                            <li><a class="text-white text-decoration-none">Services</a></li>
-                            <li><a class="text-white text-decoration-none">About Us</a></li>
+                            <li><a class="text-white text-decoration-none" href="/dashboard/appointment" class="d-block">Appointment</a></li>
+                            <li><a class="text-white text-decoration-none" href="#doctors">Doctors</a></li>
+                            <li><a class="text-white text-decoration-none" href="#services">Services</a></li>
+                            <li><a class="text-white text-decoration-none" href="#aboutus">About Us</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4 mb-md-0 mb-4">
