@@ -16,6 +16,9 @@ class DoctorController extends Controller
     public function index()
     {
         $doctors = Doctor::all();
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
         return view('dashboard.doctor.index', ['doctors' => $doctors]);
     }
 
@@ -41,7 +44,7 @@ class DoctorController extends Controller
             'email' => 'required|email:dns',
             'speciality_id' => 'required|exists:specialities,id',
             'phone' => 'required',
-            'bio' => 'nullable|max:255',
+            'bio' => 'nullable',
             'schedule' => 'required',
             'location' => 'required',
             'image' => 'nullable|image|file|max:5000',
@@ -60,10 +63,10 @@ class DoctorController extends Controller
             ]);
             $validateDataUser['password'] = bcrypt($request->password);
             $validateDataUser['role'] = 'doctor';
-            User::create($validateDataUser);    
+            User::create($validateDataUser);
         }
         Doctor::create($validateData);
-
+        alert()->success('Success!', 'Doctor Added Successfully!');
         return redirect('/dashboard/doctor')->with('success', 'Doctor Added Successfully!');
     }
 
@@ -72,7 +75,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        return view('dashboard.doctor.show', ['doctor' => $doctor]);   
+        return view('dashboard.doctor.show', ['doctor' => $doctor]);
     }
 
     /**
@@ -97,7 +100,7 @@ class DoctorController extends Controller
             'email' => 'required|email:dns',
             'speciality_id' => 'required|exists:specialities,id',
             'phone' => 'required',
-            'bio' => 'nullable|max:255',
+            'bio' => 'nullable',
             'schedule' => 'required',
             'location' => 'required',
             'image' => 'nullable|image|file|max:5000',
@@ -112,7 +115,8 @@ class DoctorController extends Controller
 
         Doctor::where('id', $doctor->id)->update($validateData);
 
-        return redirect('/dashboard/doctor')->with('success', 'Doctor Updated Successfully!');
+        toast('Edit Data Successfully!', 'success');
+        return redirect('/dashboard/doctor');
     }
 
     /**
@@ -120,11 +124,12 @@ class DoctorController extends Controller
      */
     public function destroy(Doctor $doctor)
     {
-        if($doctor->image){
+        if ($doctor->image) {
             Storage::delete($doctor->image);
         }
         User::where('name', $doctor->name)->delete();
         Doctor::destroy($doctor->id);
-        return redirect('/dashboard/doctor')->with('success', 'Doctor Deleted Successfully!');
+        alert()->success('Success', 'Doctor Deleted Successfully!');
+        return redirect('/dashboard/doctor');
     }
 }

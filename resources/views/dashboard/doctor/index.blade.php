@@ -37,7 +37,7 @@
                             <th>Profile</th>
                             <th>Doctor Name</th>
                             <th>Email</th>
-                            <th>Speciality  </th>
+                            <th>Speciality</th>
                             <th>Schedule</th>
                             <th>Action</th>
                         </tr>
@@ -67,14 +67,8 @@
                                 <a class="me-3" href="/dashboard/doctor/{{$doctor->id}}/edit">
                                     <img src={{ asset('assets/img/icons/edit.svg') }} />
                                 </a>
-                                <a class="confirm-text" href="javascript:void(0);">
-                                    <form action="/dashboard/doctor/{{$doctor->id}}" method="POST" class="d-inline">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn p-0 mb-2">
-                                            <img src={{asset('assets/img/icons/delete.svg') }} />
-                                        </button>
-                                    </form>
+                                <a class="confirm-text" href="/dashboard/doctor/{{$doctor->id}}" data-confirm-delete="true">
+                                    <img src={{ asset('assets/img/icons/delete.svg') }} />
                                 </a>
                             </td>
                         </tr>

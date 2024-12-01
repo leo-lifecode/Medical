@@ -12,7 +12,6 @@ class authenticateController extends Controller
 {
     public function Login(Request $request)
     {
-        $doctors = Doctor::all();
         $validateData = $request->validate([
             'email' => 'required|email:dns',
             'password' => 'min:8|required',
@@ -29,8 +28,8 @@ class authenticateController extends Controller
                 return redirect('/');
             }
         }
-
-        return back()->with('loginError', 'Email or Password is Wrong!');
+        toast('Email or Password is Wrong!','error');
+        return back();
     }
 
     public function register(Request $request)
@@ -52,6 +51,7 @@ class authenticateController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        toast('Logout Successfully!','success');
         return redirect('/');
     }
 }

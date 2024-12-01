@@ -69,6 +69,18 @@ class DatabaseSeeder extends Seeder
                 'bio' => 'Dr. Petra Winsburry is a seasoned general medicine practitioner with over 15 years of experience in providing comprehensive healthcare services. He is dedicated to ensuring the overall well-being of his patients through routine check-ups and preventive care.',
                 'location' => '123 Main Street, Anytown, USA',
                 'schedule' => 'Monday to Friday: 9:00 AM - 5:00 PM'
+            ],
+            [
+                'name' => 'Dr. Jane Doe',
+                'age' => '28',
+                'gender' => 'Female',
+                'speciality_id' => 1,
+                'email' => 'janedoe@gmail.com',
+                'phone' => '987-654-3210',
+                'password' => Hash::make('12345678'),
+                'bio' => 'Dr. Jane Doe is a skilled pediatrician specializing in childrens health. She has a passion for providing compassionate care to children and their families.',
+                'location' => '456 Elm Street, Anytown, USA',
+                'schedule' => 'Monday to Friday: 9:00 AM - 5:00 PM'
             ]
         ]);
     }

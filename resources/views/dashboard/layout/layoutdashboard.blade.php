@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <div id="global-loader">
         <div class="whirly-loader"></div>
     </div>

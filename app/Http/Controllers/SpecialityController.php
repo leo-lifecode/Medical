@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\Models\Speciality;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SpecialityController extends Controller
 {
@@ -13,6 +15,9 @@ class SpecialityController extends Controller
     public function index()
     {
         $specialities = Speciality::all();
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
         return view('dashboard.department.index', ['specialities' => $specialities]);
     }
 
@@ -29,15 +34,28 @@ class SpecialityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|file|max:5000',
+            'description' => 'nullable',
+            'about' => 'required',
+        ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('Speciality-images', 'public');
+        }
+
+        Speciality::create($validatedData);
+        Alert::success('Success!', 'Speciality Created Successfully!');
+        return redirect('/dashboard/speciality');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Speciality $speciality)
     {
-        //
+        return view('dashboard.department.show', ['speciality' => $speciality]);
     }
 
     /**
@@ -59,8 +77,14 @@ class SpecialityController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Speciality $speciality)
     {
-        //
+        if ($speciality->image) {
+            Storage::delete($speciality->image);
+        }
+
+        $speciality->delete();
+        alert()->success('Success', 'Speciality Deleted Successfully!');
+        return redirect('/dashboard/speciality');
     }
 }
