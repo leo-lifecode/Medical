@@ -25,11 +25,42 @@
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
+                            <label>Age</label>
+                            <input type="text" name="age" value="{{ old('age', $doctor->age ?? '') }}" class="form-control" />
+                            @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select name="gender" class="form-control select">
+                                <option value="Female" {{ old('gender', $doctor->gender ?? '')=='Female' ? 'selected' : '' }}>Female</option>
+                                <option value="Male" {{ old('gender', $doctor->gender ?? '')=='Male' ? 'selected' : '' }}>Male</option>
+                            </select>
+                            @error('gender')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="form-group">
                             <label>Schedule</label>
                             <select name="schedule" class="form-control select">
                                 <option value="">Choose Schedule</option>
-                                <option value="Morning" {{ old('schedule', $doctor->schedule ?? '') == 'Morning' ? 'selected' : '' }}>Morning</option>
-                                <option value="Afternoon" {{ old('schedule', $doctor->schedule ?? '') == 'Afternoon' ? 'selected' : '' }}>Afternoon</option>
+                                <option value="Monday to Friday: 9:00 AM - 5:00 PM" {{
+                                    old('schedule', $doctor->schedule ?? '')=='Monday to Friday: 9:00 AM - 5:00 PM' ? 'selected' : '' }}>Monday
+                                    to Friday: 9:00 AM - 5:00 PM
+                                </option>
+                                <option value="Monday to Friday: 12:00 AM - 3:00 PM" {{
+                                    old('schedule', $doctor->schedule ?? '')=='Monday to Friday: 12:00 AM - 3:00 PM' ? 'selected' : '' }}>Monday
+                                    to Friday: 12:00 AM - 3:00 PM
+                                </option>
+                                <option value="Monday: 10:00 AM - 5:00 PM" {{
+                                    old('schedule', $doctor->schedule ?? '')=='Monday: 10:00 AM - 5:00 PM' ? 'selected' : '' }}>Monday: 10:00 AM
+                                    - 5:00 PM
+                                </option>
                             </select>
                             @error('schedule')
                                 <div class="text-danger">{{ $message }}</div>
@@ -39,14 +70,17 @@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="form-group">
                             <label>Speciality</label>
-                            <select name="speciality" class="form-control select">
-                                <option value="">Choose Speciality</option>
-                                <option value="Cardiology" {{ old('speciality', $doctor->speciality ?? '') == 'Cardiology' ? 'selected' : '' }}>Cardiology</option>
-                                <option value="Neurology" {{ old('speciality', $doctor->speciality ?? '') == 'Neurology' ? 'selected' : '' }}>Neurology</option>
-                            </select>
-                            @error('speciality')
+                            <select name="speciality_id" class="form-control select">
+                                <option value="" selected disabled>Choose Speciality</option>
+                                @foreach ($specialities as $speciality)
+                                <option value="{{ $speciality->id }}" {{ old('speciality_id', $doctor->speciality_id ?? '') == "$speciality->id" ? 'selected' : '' }}>
+                                    {{$speciality->name}}
+                                </option>
+                                @endforeach
+                                @error('speciality_id')
                                 <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                                @enderror
+                            </select>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12">
@@ -87,16 +121,14 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label>Doctor Image</label>
-                            <div class="image-upload">
-                                <input type="file" name="image" class="form-control" />
-                                <div class="image-uploads">
-                                    <img src="{{ asset('assets/img/icons/upload.svg') }}" />
-                                    <h4>Drag and drop a file to upload</h4>
-                                </div>
-                            </div>
+                            <input type="hidden" name="oldImage" value="{{ $doctor->image }}">
+                            <img src="{{ asset('storage/' . $doctor->image) }}" id="file-preview">
+                            <label for="formFile" class="form-label">
+                                Choose profile photo
+                            </label>
+                            <input id="file-input" name="image" type="file" class="form-control" />
                             @error('image')
-                                <div class="text-danger">{{ $message }}</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>

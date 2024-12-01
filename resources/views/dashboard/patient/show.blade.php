@@ -104,7 +104,7 @@
                 width="60" />
             <div class="name">
                 <h4>
-                    {{$doctor->name}}
+                    Caren G. Simpson
                     <span class="badge">
                         Active
                     </span>
@@ -128,25 +128,29 @@
                         <span>
                             Phone Number
                         </span>
-                        {{$doctor->phone}}
+                        +1 555-123-4567
                     </div>
                     <div class="info-item">
                         <span>
                             Email
                         </span>
-                        {{$doctor->email}}
+                        caren.simpson@example.com
                     </div>
                     <div class="info-item">
                         <span>
                             Address
                         </span>
-                        {{$doctor->location}}
+                        123 Maple Street
+                        <br />
+                        Springfield, IL, USA
                     </div>
                     <div class="info-item">
                         <span>
-                            Schedule
+                            Emergency Contact
                         </span>
-                        {{$doctor->schedule}}
+                        John Simpson - Brother
+                        <br />
+                        +1 555-234-5678
                     </div>
                 </div>
             </div>
@@ -163,34 +167,79 @@
                                 <span>
                                     Gender
                                 </span>
-                                {{$doctor->gender}}
+                                Female
                             </div>
                             <div class="info-item">
                                 <span>
                                     Age
                                 </span>
-                                {{$doctor->age}}
+                                35 years old
                             </div>
                             <div class="info-item">
                                 <span>
-                                    Profile
+                                    Date of Birth
                                 </span>
-                                {{$doctor->bio}}
+                                1989-06-15
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-item">
                                 <span>
-                                    Specialty
+                                    Occupation
                                 </span>
-                                {{$doctor->speciality->name}}
+                                Software Engineer
+                            </div>
+                            <div class="info-item">
+                                <span>
+                                    Insurance
+                                </span>
+                                HealthPlus
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card patient-notes">
+                <div class="card-header">
+                    Patient Notes
+                </div>
+                <div class="card-body">
+                    <div class="note">
+                        <h6>
+                            Jun 8, 2027, 4:45 PM
+                        </h6>
+                        <p>
+                            Asthma
+                        </p>
+                        <p>
+                            Ensure the patient always carries an inhaler and avoids allergy triggers.
+                        </p>
+                    </div>
+                    <div class="note">
+                        <h6>
+                            Apr 9, 2028, 9:15 AM
+                        </h6>
+                        <p>
+                            Hypertension
+                        </p>
+                        <p>
+                            Advise the patient to engage in light exercise and monitor blood pressure weekly.
+                        </p>
+                    </div>
+                    <div class="note">
+                        <h6>
+                            Oct 10, 2027, 2:30 PM
+                        </h6>
+                        <p>
+                            Type 2 Diabetes
+                        </p>
+                        <p>
+                            Patient needs to monitor blood sugar levels regularly &amp; follow the recommended diet.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

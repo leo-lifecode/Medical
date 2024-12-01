@@ -1,7 +1,7 @@
 @extends('dashboard.layout.layoutdashboard')
 
 @section('content')
-<div class="content">
+{{-- <div class="content">
     <div class="page-header">
         <div class="page-title">
             <h4>Medical Department list</h4>
@@ -20,7 +20,8 @@
             <div class="table-top">
                 <div class="search-set">
                     <div class="search-input">
-                        <a class="btn btn-searchset"><img src={{ asset('assets/img/icons/search.svg') }} width="15" /></a>
+                        <a class="btn btn-searchset"><img src={{ asset('assets/img/icons/search.svg') }}
+                                width="15" /></a>
                     </div>
                 </div>
             </div>
@@ -71,5 +72,55 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> --}}
+<style>
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .avatar-group img {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+
+    .avatar-group {
+        display: flex;
+        align-items: center;
+    }
+
+    .avatar-group img:not(:first-child) {
+        margin-left: -10px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <!-- General Medicine -->
+        @foreach ($specialities as $speciality)
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://storage.googleapis.com/a1aa/image/9f60gkRjb4Xif0iJcPNfJxOMK4Yv5CcLk6iYhtVDkeRBgzZPB.jpg"
+                        class="card-img-top" alt="Stethoscope and medical supplies">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$speciality->name}}</h5>
+                        <p class="card-text">{{$speciality->about}}</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="avatar-group">
+                                <img src="https://storage.googleapis.com/a1aa/image/xjFivYRXGfyzGKaY0MNPzMue1dd0fHwTUv9yrMvYlRfVgzZPB.jpg"
+                                    alt="User 1">
+                                <img src="https://storage.googleapis.com/a1aa/image/zcXAKVWwHW64OpbEpFWFRT0JlfBYZFkiCFKRMXjugKNBcO7JA.jpg"
+                                    alt="User 2">
+                                <span class="ml-2">+1 others</span>
+                            </div>
+                            <div class="">
+                                <a href="#" class="btn btn-primary">See Detail</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        @endsection

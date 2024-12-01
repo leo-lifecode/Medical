@@ -12,7 +12,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="/dashboard/department" method="POST" enctype="multipart/form-data">
+            <form action="/dashboard/speciality" method="POST" enctype="multipart/form-data">
                 @method('POST')
                 @csrf
                 <div class="row">
@@ -41,6 +41,18 @@
                         </div>
                     </div>
 
+                    <!-- Description -->
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="about">About</label>
+                            <textarea name="about" id="about" 
+                                      class="form-control @error('about') is-invalid @enderror">{{ old('about') }}</textarea>
+                            @error('about')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
                     <!-- Medical Image -->
                     <div class="col-lg-12">
                         <div class="form-group">
@@ -62,7 +74,7 @@
                     <!-- Submit and Cancel Buttons -->
                     <div class="col-lg-12">
                         <button type="submit" class="btn btn-submit me-2">Submit</button>
-                        <a href="{{ route('departments.index') }}" class="btn btn-cancel">Cancel</a>
+                        <a href="/dashboard/speciality" class="btn btn-cancel">Cancel</a>
                     </div>
                 </div>
             </form>

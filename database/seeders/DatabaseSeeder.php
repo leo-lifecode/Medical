@@ -41,24 +41,32 @@ class DatabaseSeeder extends Seeder
 
         Speciality::insert([
             [
-                'name' => 'Cardiology'
+                'name' => 'Cardiology',
+                'about' => 'Provides comprehensive healthcare services including routine check-ups,
+                            preventive care, and treatment for a wide range of medical conditions.',
             ],
             [
-                'name' => 'Pediatrics'
+                'name' => 'Pediatrics',
+                'about' => 'Provides comprehensive healthcare services including routine check-ups,
+                            preventive care, and treatment for a wide range of medical conditions.',
             ],
             [
-                'name' => 'Dentistry'
+                'name' => 'Dentistry',
+                'about' => 'Provides comprehensive healthcare services including routine check-ups,
+                            preventive care, and treatment for a wide range of medical conditions.',
             ]
         ]);
 
         Doctor::insert([
             [
                 'name' => 'Dr. John Doe',
+                'age' => '35',
+                'gender' => 'Male',
                 'speciality_id' => 1,
                 'email' => 'johndoe@gmail.com',
                 'phone' => '123-456-7890',
                 'password' => Hash::make('12345678'),
-                'bio' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                'bio' => 'Dr. Petra Winsburry is a seasoned general medicine practitioner with over 15 years of experience in providing comprehensive healthcare services. He is dedicated to ensuring the overall well-being of his patients through routine check-ups and preventive care.',
                 'location' => '123 Main Street, Anytown, USA',
                 'schedule' => 'Monday to Friday: 9:00 AM - 5:00 PM'
             ]

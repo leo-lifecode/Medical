@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Speciality;
 use Illuminate\Http\Request;
 
 class SpecialityController extends Controller
@@ -11,7 +12,8 @@ class SpecialityController extends Controller
      */
     public function index()
     {
-        //
+        $specialities = Speciality::all();
+        return view('dashboard.department.index', ['specialities' => $specialities]);
     }
 
     /**
@@ -19,7 +21,7 @@ class SpecialityController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.department.create');
     }
 
     /**

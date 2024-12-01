@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('name');
+            $table->string('age');
+            $table->string('gender');
             $table->string('email');
             $table->string('phone');
             $table->string('password');
             $table->unsignedBigInteger('speciality_id');
             $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade');
-            $table->string('bio');
+            $table->text('bio');
             $table->string('location');
             $table->string('schedule');
             $table->timestamps();

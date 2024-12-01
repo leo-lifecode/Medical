@@ -37,10 +37,7 @@
                             <th>Profile</th>
                             <th>Doctor Name</th>
                             <th>Email</th>
-                            <th>Phone</th>
-                            <th>Speciality</th>
-                            <th>Bio</th>
-                            <th>Location</th>
+                            <th>Speciality  </th>
                             <th>Schedule</th>
                             <th>Action</th>
                         </tr>
@@ -61,10 +58,7 @@
                             </td>
                             <td>{{$doctor->name}}</td>
                             <td>{{$doctor->email}}</td>
-                            <td>{{$doctor->phone}}</td>
                             <td>{{$doctor->speciality->name}}</td>
-                            <td>{{$doctor->bio}}</td>
-                            <td>{{$doctor->location}}</td>
                             <td>{{$doctor->schedule}}</td>
                             <td class="">
                                 <a class="me-3" href="/dashboard/doctor/{{$doctor->id}}">
@@ -75,7 +69,7 @@
                                 </a>
                                 <a class="confirm-text" href="javascript:void(0);">
                                     <form action="/dashboard/doctor/{{$doctor->id}}" method="POST" class="d-inline">
-                                        @method('destroy')
+                                        @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn p-0 mb-2">
                                             <img src={{asset('assets/img/icons/delete.svg') }} />

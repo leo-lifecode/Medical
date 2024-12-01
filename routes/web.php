@@ -35,5 +35,5 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
     Route::resource('/appointment', AppointController::class)->except(['create']);
     Route::resource('/doctor', DoctorController::class);
-    Route::resource('/speciality', SpecialityController::class)->except(['show']);
+    Route::resource('/speciality', SpecialityController::class);
 });
