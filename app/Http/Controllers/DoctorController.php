@@ -55,7 +55,9 @@ class DoctorController extends Controller
             $validateData['image'] = $request->file('image')->store('Doctor-images', 'public');
         }
         $validateData['password'] = bcrypt($request->password);
-        if (true) {
+        
+        $doctor = Doctor::create($validateData);
+        if ($doctor) {
             $validateDataUser = $request->validate([
                 'name' => 'required',
                 'email' => 'required|email:dns',
@@ -65,7 +67,6 @@ class DoctorController extends Controller
             $validateDataUser['role'] = 'doctor';
             User::create($validateDataUser);
         }
-        Doctor::create($validateData);
         alert()->success('Success!', 'Doctor Added Successfully!');
         return redirect('/dashboard/doctor')->with('success', 'Doctor Added Successfully!');
     }

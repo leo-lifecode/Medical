@@ -4,7 +4,9 @@ use App\Http\Controllers\AppointController;
 use App\Http\Controllers\authenticateController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\SpecialityController;
+use App\Http\Controllers\UserController;
 use App\Models\Doctor;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,4 +38,5 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::resource('/appointment', AppointController::class)->except(['create']);
     Route::resource('/doctor', DoctorController::class);
     Route::resource('/speciality', SpecialityController::class);
+    Route::resource('/user', UserController::class)->except(['show']);
 });

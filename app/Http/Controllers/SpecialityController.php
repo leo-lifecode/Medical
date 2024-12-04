@@ -61,17 +61,33 @@ class SpecialityController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Speciality $speciality)
     {
-        //
+        return view('dashboard.department.edit', ['speciality' => $speciality]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Speciality $speciality)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|file|max:5000',
+            'description' => 'nullable',
+            'about' => 'required',
+        ]);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('Speciality-images', 'public');
+        }
+
+        $speciality->update($validatedData);
+        Alert::success('Success!', 'Speciality Created Successfully!');
+        return redirect('/dashboard/speciality');
     }
 
     /**
