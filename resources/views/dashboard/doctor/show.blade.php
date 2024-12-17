@@ -100,7 +100,7 @@
     <div class="profile-header">
         <div class="info">
             <img alt="Profile picture of Caren G. Simpson" height="60"
-                src="https://storage.googleapis.com/a1aa/image/qAal6cYw9uLwJxKOU65afb6R1X8E9pg7r6VoVTNfLOCvf7snA.jpg"
+                src="{{ asset('storage/'.$doctor->image) }}"
                 width="60" />
             <div class="name">
                 <h4>
@@ -112,17 +112,17 @@
             </div>
         </div>
         <div class="actions">
-            <button class="btn btn-primary">
+            <a href="/dashboard/doctor/{{$doctor->id}}/edit" class="btn btn-primary">
                 Edit Data
-            </button>
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header">
+                <h3 class="card-header">
                     Contact Info
-                </div>
+                </h3>
                 <div class="card-body">
                     <div class="info-item">
                         <span>
@@ -153,9 +153,9 @@
         </div>
         <div class="col-md-8">
             <div class="card mb-3">
-                <div class="card-header">
+                <h3 class="card-header">
                     General Info
-                </div>
+                </h3>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">

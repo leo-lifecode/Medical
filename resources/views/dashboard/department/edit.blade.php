@@ -1,6 +1,8 @@
 @extends('dashboard.layout.layoutdashboard')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+<script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
 
 <div class="content">
     <div class="page-header">
@@ -44,10 +46,14 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description"
-                                class="form-control @error('description') is-invalid @enderror">{{ old('description', $speciality->description) }}</textarea>
-                            @error('description')
-                            <div class="invalid-feedback">{{ $message }}</div>
+                            <trix-toolbar id="my_toolbar"></trix-toolbar>
+                                <input id="description" type="hidden" name="description"
+                                    value="{{ old('description', $speciality->description) }}">
+                                <div class="more-stuff-inbetween"></div>
+                                <trix-editor toolbar="my_toolbar" input="description"></trix-editor>
+                            </div>
+                            @error('content')
+                            <div class="invalid-feedback"> {{ $message }}</div>
                             @enderror
                         </div>
                     </div>

@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
                 'name' => 'admin',
                 'email' => 'admin@gmail.com',
                 'password' => Hash::make('12345678'),
-                'role' => 'admin'
+                'role' => 'admin',
+                'image' => "User-images/user-1.jpg",
             ],
             [
                 'name' => 'user',
@@ -42,16 +43,19 @@ class DatabaseSeeder extends Seeder
         Speciality::insert([
             [
                 'name' => 'Cardiology',
+                'image' => 'Speciality-images/departments-1.jpg',
                 'about' => 'Provides comprehensive healthcare services including routine check-ups,
                             preventive care, and treatment for a wide range of medical conditions.',
             ],
             [
                 'name' => 'Pediatrics',
+                'image' => 'Speciality-images/departments-2.jpg',
                 'about' => 'Provides comprehensive healthcare services including routine check-ups,
                             preventive care, and treatment for a wide range of medical conditions.',
             ],
             [
                 'name' => 'Dentistry',
+                'image' => 'Speciality-images/departments-3.jpg',
                 'about' => 'Provides comprehensive healthcare services including routine check-ups,
                             preventive care, and treatment for a wide range of medical conditions.',
             ]
@@ -62,8 +66,9 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Dr. John Doe',
                 'age' => '35',
                 'gender' => 'Male',
+                'image' => "Doctor-images/doctors-1.jpg",
                 'speciality_id' => 1,
-                'email' => 'johndoe@gmail.com',
+                'email' => 'admin@gmail.com',
                 'phone' => '123-456-7890',
                 'password' => Hash::make('12345678'),
                 'bio' => 'Dr. Petra Winsburry is a seasoned general medicine practitioner with over 15 years of experience in providing comprehensive healthcare services. He is dedicated to ensuring the overall well-being of his patients through routine check-ups and preventive care.',
@@ -74,6 +79,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Dr. Jane Doe',
                 'age' => '28',
                 'gender' => 'Female',
+                'image' => 'Doctor-images/doctors-3.jpg',
                 'speciality_id' => 1,
                 'email' => 'janedoe@gmail.com',
                 'phone' => '987-654-3210',
