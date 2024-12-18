@@ -5,8 +5,8 @@ use App\Http\Controllers\authenticateController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\UserController;
+use App\Models\Appointment;
 use App\Models\Doctor;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,8 +25,8 @@ Route::post('/signin', [authenticateController::class, 'login'])->middleware('gu
 Route::post('/signup', [authenticateController::class, 'register'])->middleware('guest');
 Route::post('/logout', [authenticateController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::get('/appointment', function () {
-    return view('appointment');
+Route::get('appointment', function () {
+    return view('appointment', ['appointments' => Appointment::all()]);
 })->name('appointment');
 Route::post('/appointment', [AppointController::class, 'store'])->middleware('auth');
 
@@ -35,7 +35,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         return view('dashboard.index');
     })->name('dashboard');
 
-    Route::resource('/appointment', AppointController::class)->except(['create']);
+    Route::resource('/appointment', AppointController::class)->except(['create', 'store', 'show', 'edit']);
     Route::resource('/doctor', DoctorController::class);
     Route::resource('/speciality', SpecialityController::class);
     Route::resource('/user', UserController::class)->except(['show']);

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Appointment;
-use App\Models\Doctor;
 use Illuminate\Support\Facades\Auth;
 
 class AppointController extends Controller
@@ -14,7 +13,7 @@ class AppointController extends Controller
      */
     public function index()
     {
-        return view('appointment');
+        return view('dashboard.appointment.index', ['appointments' => Appointment::all()]);
     }
 
     /**
@@ -59,16 +58,21 @@ class AppointController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Appointment $appointment)
     {
-        //
+        $appointment->status = $request->status;
+        $appointment->save();
+        alert()->success('Success', 'appointment Updated Successfully!');
+        return redirect('/dashboard/appointment');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Appointment $appointment)
     {
-        //
+        $appointment->delete();
+        alert()->success('Success', 'appointment Deleted Successfully!');
+        return redirect('/dashboard/appointment');
     }
 }

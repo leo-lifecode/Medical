@@ -193,9 +193,6 @@
                                 <li><a href="/dashboard/appointment"
                                         class="{{ request()->is('dashboard/appointment') ? 'active' : '' }}">Appointment
                                         List</a></li>
-                                <li><a href="/dashboard/appointment/create"
-                                        class="{{ request()->is('dashboard/appointment/create') ? 'active' : '' }}">Add
-                                        Appointment</a></li>
                             </ul>
                         </li>
                         <li class="submenu">

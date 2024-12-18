@@ -36,7 +36,8 @@ class DatabaseSeeder extends Seeder
                 'name' => 'user',
                 'email' => 'user@gmail.com',
                 'password' => Hash::make('12345678'),
-                'role' => 'user'
+                'role' => 'user',
+                'image' => "User-images/user-1.jpg",
             ],
         ]);
 

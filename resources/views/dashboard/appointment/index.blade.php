@@ -1,23 +1,30 @@
-@extends('layout.homelayout')
-
+@extends('dashboard.layout.layoutdashboard')
 
 @section('content')
-
-
-<div class="container">
-
-    <div class="text-center mt-4">
-        <h2>Appointment</h2>
+<div class="content">
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Appointment List</h4>
+            <h6>Manage your Appointment</h6>
+        </div>
+        {{-- <div class="page-btn">
+            <a href="/dashboard/doctor/create" class="btn btn-added"><img src={{
+                    asset('assets/img/icons/plus-circle.svg') }} class="me-1" />Add New Doctor</a>
+        </div> --}}
     </div>
-    <div class="text-center text-primary">
-        @if (session('success'))
-            <h4>{{ session('success') }}</h4>
-        @endif
-    </div>
 
-    <div class="row my-5">
-        <div class="col">
-            <div class="table-responsive md">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-top">
+                <div class="search-set">
+                    <div class="search-input">
+                        <a class="btn btn-searchset"><img src={{ asset('assets/img/icons/search.svg') }}
+                                width="15" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
                 <table class="table datanew">
                     <thead>
                         <tr>
@@ -82,6 +89,5 @@
             </div>
         </div>
     </div>
-
 </div>
 @endsection
