@@ -29,9 +29,17 @@
                                     <input name="name" type="text" class="form-control" placeholder="John Doe">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label class="label" for="email">Email Address</label>
-                                    <input name="email" type="text" class="form-control"
-                                        placeholder="johndoe@gmail.com">
+                                    <label for="speciality_id">Choose a Treatment:</label>
+                                    <select name="speciality_id" id="speciality_id" class="form-select" aria-label="Default select example">
+                                        <option value="Routine Check-up" selected>Routine Check-up</option>
+                                        <option value="Cardiology Consultation">Cardiology Consultation</option>
+                                        <option value="Dental Cleaning">Dental Cleaning</option>
+                                        <option value="Orthopedic Therapy">Orthopedic Therapy</option>
+                                        <option value="Physical Therapy">Physical Therapy</option>
+                                        <option value="Surgery Consultation">Surgery Consultation</option>
+                                        <option value="Nutrition Counseling">Nutrition Counseling</option>
+                                        <option value="Vaccination">Vaccination</option>
+                                    </select>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="phone">No Phone</label>

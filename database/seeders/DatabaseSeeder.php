@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Doctor;
 use App\Models\Speciality;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -89,6 +89,30 @@ class DatabaseSeeder extends Seeder
                 'location' => '456 Elm Street, Anytown, USA',
                 'schedule' => 'Monday to Friday: 9:00 AM - 5:00 PM'
             ]
+        ]);
+
+
+        DB::table('appointments')->insert([
+            [
+                'user_id' => 2, // Sesuaikan dengan ID user
+                'email' => 'user@gmail.com',
+                'phone' => '987-654-3210',
+                'treatment' => 'Routine Check-up',
+                'doctor_id' => 1, // Sesuaikan dengan ID doctor
+                'status' => 'Pending',
+                'date' => '2024-12-20',
+                'time' => '10:00:00',
+            ],
+            [
+                'user_id' => 2,
+                'email' => 'user@gmail.com',
+                'phone' => '987-654-3210',
+                'treatment' => 'Pediatrics Consultation',
+                'doctor_id' => 2,
+                'status' => 'Approved',
+                'date' => '2024-12-21',
+                'time' => '14:00:00',
+            ],
         ]);
     }
 }
