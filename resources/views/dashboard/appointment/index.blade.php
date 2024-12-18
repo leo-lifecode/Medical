@@ -38,6 +38,7 @@
                             <th>Date</th>
                             <th>Time</th>
                             <th>Doctor</th>
+                            <th>Treatment</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -55,6 +56,7 @@
                             <td>{{$appointment->date}}</td>
                             <td>{{$appointment->time}}</td>
                             <td>{{$appointment->doctor->name}}</td>
+                            <td>{{$appointment->treatment}}</td>
                             <td><span class="badges {{$appointment->status == 'Approved' ? 'bg-lightgreen' : 'bg-danger'}}">{{$appointment->status}}</span></td>
                             <td class="d-flex align-items-center gap-1">
                                 <a class="" href="javascript:void(0);">
