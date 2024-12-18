@@ -99,101 +99,61 @@
 <div class="container mt-5">
     <div class="profile-header">
         <div class="info">
-            <img alt="Profile picture of Caren G. Simpson" height="60"
-                src="https://storage.googleapis.com/a1aa/image/qAal6cYw9uLwJxKOU65afb6R1X8E9pg7r6VoVTNfLOCvf7snA.jpg"
-                width="60" />
+            <img height="60" width="60"
+                src="{{ asset('storage/'.$patient->image) }}" />
             <div class="name">
-                <h4>
-                    Caren G. Simpson
-                    <span class="badge">
-                        Active
-                    </span>
-                </h4>
+                <h4>{{$patient->name}} <span class="badge"> Active </span> </h4>
             </div>
         </div>
         <div class="actions">
-            <button class="btn btn-primary">
-                Edit Data
-            </button>
+            <a href="/dashboard/patient/{{$patient->id}}/edit">
+                <button class="btn btn-primary">
+                    Edit Data
+                </button>
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header">
+                <h3 class="card-header">
                     Contact Info
-                </div>
+                </h3>
                 <div class="card-body">
                     <div class="info-item">
-                        <span>
-                            Phone Number
-                        </span>
-                        +1 555-123-4567
+                        <span>Phone Number</span>
+                        {{$patient->phone}}
                     </div>
                     <div class="info-item">
-                        <span>
-                            Email
-                        </span>
-                        caren.simpson@example.com
+                        <span> Email </span>
+                        {{$patient->email}}
                     </div>
                     <div class="info-item">
-                        <span>
-                            Address
-                        </span>
-                        123 Maple Street
-                        <br />
-                        Springfield, IL, USA
-                    </div>
-                    <div class="info-item">
-                        <span>
-                            Emergency Contact
-                        </span>
-                        John Simpson - Brother
-                        <br />
-                        +1 555-234-5678
+                        <span>Address</span>
+                        {{$patient->address}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-8">
             <div class="card mb-3">
-                <div class="card-header">
+                <h3 class="card-header">
                     General Info
-                </div>
+                </h3>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="info-item">
-                                <span>
-                                    Gender
-                                </span>
-                                Female
+                                <span>Gender</span>
+                                {{$patient->gender}}
                             </div>
                             <div class="info-item">
-                                <span>
-                                    Age
-                                </span>
-                                35 years old
+                                <span>Age</span>
+                                {{$patient->age}}
                             </div>
                             <div class="info-item">
-                                <span>
-                                    Date of Birth
-                                </span>
-                                1989-06-15
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-item">
-                                <span>
-                                    Occupation
-                                </span>
-                                Software Engineer
-                            </div>
-                            <div class="info-item">
-                                <span>
-                                    Insurance
-                                </span>
-                                HealthPlus
+                                <span>date of birth</span>
+                                {{$patient->dob}}
                             </div>
                         </div>
                     </div>
@@ -205,37 +165,7 @@
                 </div>
                 <div class="card-body">
                     <div class="note">
-                        <h6>
-                            Jun 8, 2027, 4:45 PM
-                        </h6>
-                        <p>
-                            Asthma
-                        </p>
-                        <p>
-                            Ensure the patient always carries an inhaler and avoids allergy triggers.
-                        </p>
-                    </div>
-                    <div class="note">
-                        <h6>
-                            Apr 9, 2028, 9:15 AM
-                        </h6>
-                        <p>
-                            Hypertension
-                        </p>
-                        <p>
-                            Advise the patient to engage in light exercise and monitor blood pressure weekly.
-                        </p>
-                    </div>
-                    <div class="note">
-                        <h6>
-                            Oct 10, 2027, 2:30 PM
-                        </h6>
-                        <p>
-                            Type 2 Diabetes
-                        </p>
-                        <p>
-                            Patient needs to monitor blood sugar levels regularly &amp; follow the recommended diet.
-                        </p>
+                        {!!$patient->notes!!}
                     </div>
                 </div>
             </div>

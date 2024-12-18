@@ -3,8 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Doctor;
+use App\Models\Patient;
 use App\Models\Speciality;
 use App\Models\User;
+use Faker\Factory as Faker;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -114,5 +117,44 @@ class DatabaseSeeder extends Seeder
                 'time' => '14:00:00',
             ],
         ]);
+
+        $faker = Faker::create();
+
+        // Mendapatkan dokter secara acak untuk dihubungkan dengan pasien
+        $doctors = Doctor::all();
+
+        // Membuat 10 data pasien palsu
+        foreach (range(1, 10) as $index) {
+            Patient::create([
+                'name' => $faker->name,
+                'email' => $faker->unique()->safeEmail,
+                'phone' => $faker->phoneNumber,
+                'address' => $faker->address,
+                'image' => $faker->imageUrl(640, 480, 'people'), // URL gambar palsu
+                'gender' => $faker->randomElement(['Male', 'Female', 'Other']),
+                'age' => $faker->numberBetween(18, 90),
+                'dob' => $faker->date('Y-m-d', '2000-01-01'), // Tanggal lahir (dob)
+                'notes' => json_encode([ // Menggunakan JSON untuk menyimpan beberapa catatan
+                    [
+                        'date' => 'Jun 8, 2027, 4:45 PM',
+                        'condition' => 'Asthma',
+                        'instructions' => 'Ensure the patient always carries an inhaler and avoids allergy triggers.'
+                    ],
+                    [
+                        'date' => 'Apr 9, 2028, 9:15 AM',
+                        'condition' => 'Hypertension',
+                        'instructions' => 'Advise the patient to engage in light exercise and monitor blood pressure weekly.'
+                    ],
+                    [
+                        'date' => 'Oct 10, 2027, 2:30 PM',
+                        'condition' => 'Type 2 Diabetes',
+                        'instructions' => 'Patient needs to monitor blood sugar levels regularly & follow the recommended diet.'
+                    ]
+                ]),
+                'room' => $faker->word, // bisa diganti sesuai format kamar
+                'treatment' => $faker->word, // bisa diganti sesuai treatment yang tersedia
+                'doctor_id' => $doctors->random()->id, // Menghubungkan dengan dokter secara acak
+            ]);
+        }
     }
 }

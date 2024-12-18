@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppointController;
 use App\Http\Controllers\authenticateController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\UserController;
 use App\Models\Appointment;
@@ -39,4 +40,5 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::resource('/doctor', DoctorController::class);
     Route::resource('/speciality', SpecialityController::class);
     Route::resource('/user', UserController::class)->except(['show']);
+    Route::resource('/patient', PatientController::class);
 });

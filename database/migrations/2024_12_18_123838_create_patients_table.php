@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('address');
             $table->string('image')->nullable();
             $table->string('gender');
-            $table->string('age');
+            $table->integer('age');
+            $table->date('dob');
+            $table->text('notes');
             $table->string('room');
             $table->string('treatment');
             $table->unsignedBigInteger('doctor_id');
