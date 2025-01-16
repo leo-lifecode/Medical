@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AppointController;
 use App\Http\Controllers\authenticateController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SpecialityController;
@@ -32,10 +34,7 @@ Route::get('appointment', function () {
 Route::post('/appointment', [AppointController::class, 'store'])->middleware('auth');
 
 Route::prefix('dashboard')->middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard.index');
-    })->name('dashboard');
-
+    Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/appointment', AppointController::class)->except(['create', 'store', 'show', 'edit']);
     Route::resource('/doctor', DoctorController::class);
     Route::resource('/speciality', SpecialityController::class);
